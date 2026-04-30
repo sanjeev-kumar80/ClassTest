@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<%- include('../partials/navbar') %>
+
+<h2>All Subjects</h2>
+
+<a href="/subject/new">Add New Subject</a>
+
+<ul>
+    <% subjects.forEach(sub => { %>
+        <li>
+            <h3><%= sub.subjectName %></h3>
+            <p>Price: <%= sub.price %></p>
+            <p>Units: <%= sub.units %></p>
+
+            <a href="/subject/<%= sub._id %>/edit">Edit</a>
+
+            <form action="/subject/<%= sub._id %>?_method=DELETE" method="POST">
+                <button>Delete</button>
+            </form>
+        </li>
+    <% }) %>
+</ul>

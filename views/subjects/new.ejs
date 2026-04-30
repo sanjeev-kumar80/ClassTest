@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<%- include('../partials/navbar') %>
+
+<h2>Add Subject</h2>
+
+<form action="/subject" method="POST">
+    <input type="text" name="subjectName" placeholder="Subject Name" required>
+    <input type="number" name="price" placeholder="Price" required>
+    <input type="text" name="image" placeholder="Image URL">
+    <input type="number" name="units" placeholder="Units" required>
+
+    <button>Add</button>
+</form>
